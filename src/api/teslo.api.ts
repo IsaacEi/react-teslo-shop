@@ -1,8 +1,7 @@
 import { useAuthStore } from '@/auth/stores/auth.store';
 import axios, { AxiosError, type AxiosResponse, type InternalAxiosRequestConfig } from 'axios';
-const tesloApi  =  axios.create({
-    baseURL: import.meta.env.VITE_API_URL
-});
+import { baseURL } from '@/api/config';
+const tesloApi  =  axios.create({ baseURL });
 
 //Success conection interceptor
 const success: (response: AxiosResponse) => any = (response: AxiosResponse) =>
